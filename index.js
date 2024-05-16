@@ -20,7 +20,8 @@ const connectMongoose=()=>{
 }
 app.use('/auth',authRoute)
 app.use('/task',taskRoute)
+const port=process.env.PORT
 connectMongoose()
-app.listen(3000,()=>{
-    console.log("App started on port",3000)
+app.listen(port,()=>{
+    console.log("App started on port",port)
 })
