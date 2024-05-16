@@ -1,0 +1,10 @@
+const express=require('express')
+const {addTask, updateTask, deleteTask, fetchAllTasks,getTask}=require('../controllers/taskController')
+const validateUser=require('../middleware/validateUser')
+const router=express.Router()
+router.get("/getTask",validateUser,fetchAllTasks)
+router.post("/addTask",validateUser,addTask)
+router.get("/getById/:id",validateUser,getTask)
+router.put("/updateTask/:id",validateUser,updateTask)
+router.delete("/deleteTask/:id",validateUser,deleteTask)
+module.exports=router
